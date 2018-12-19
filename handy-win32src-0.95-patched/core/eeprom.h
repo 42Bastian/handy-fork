@@ -6,6 +6,10 @@
 #ifndef EEPROM_H
 #define EEPROM_H
 
+#ifndef min
+#define min(a,b) ((a < b) ? a : b)
+#endif
+
 enum {EE_NONE=0, EE_START, EE_DATA, EE_BUSY, EE_WAIT};
 
 class CEEPROM : public CLynxBase

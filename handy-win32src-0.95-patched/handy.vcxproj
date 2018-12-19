@@ -23,6 +23,7 @@
     <SccLocalPath />
     <Keyword>MFCProj</Keyword>
     <ProjectGuid>{4987A9B5-896C-478C-B73A-4F6A234EBCEF}</ProjectGuid>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -83,6 +84,7 @@
     <OutDir>.\Debug_Dbg\</OutDir>
     <IntDir>.\Debug_Dbg\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>handybug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>.\Release\</OutDir>
@@ -183,7 +185,7 @@
       <MinimalRebuild>true</MinimalRebuild>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_LYNXDBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINSOCK_DEPRECATED_NO_WARNINGS;NO_WARN_MBCS_MFC_DEPRECATION;_WIN32_WINNT=_WIN32_WINNT_MAXVER;_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_WINDOWS;_LYNXDBG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Debug_Dbg\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
       <PrecompiledHeaderOutputFile>.\Debug_Dbg\handy.pch</PrecompiledHeaderOutputFile>
@@ -212,7 +214,7 @@
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>Nafxcwd.lib Libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>Debug_Dbg/handybug.exe</OutputFile>
+      <OutputFile>$(TargetPath)</OutputFile>
       <AdditionalDependencies>Nafxcwd.lib;Libcmtd.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

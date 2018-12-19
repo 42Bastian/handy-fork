@@ -359,7 +359,7 @@ void CCodeWin::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 					line="";
 					current_address=address;
 					address=Disassemble2(line,address);
-					fprintf(fout,"%s\n",line);
+					fprintf(fout,"%s\n", (LPCTSTR)line);
 				}
 
 				fclose(fout);
@@ -482,13 +482,13 @@ void CCodeWin::OnLButtonDblClk(UINT nFlags, CPoint point)
 
 	C6502_REGS regs;
 	mSystem.GetRegs(regs);
-
-	for(int loop=0;loop<MAX_CPU_BREAKPOINTS;loop++)
+	int loop;
+	for(loop=0;loop<MAX_CPU_BREAKPOINTS;loop++)
 	{
 		// Unset if already set
 		if(address==regs.cpuBreakpoints[loop]) break;
 	}
-    int loop;
+
 	if(loop>=MAX_CPU_BREAKPOINTS)
 	{
 		// New breakpoint at next free

@@ -35,7 +35,6 @@
 
 #include <afxcom_.h>
 #include <comdef.h>
-
 // -- interface pointer typedefs --
 
 DEFINE_IPTR (IDirectDraw2);

@@ -154,18 +154,18 @@ void CEEPROM::UpdateEeprom(UWORD cnt)
 {
    // Update if either counter strobed or AUDIN changed
    bool CLKp, CLKn;
-   CLKp=counter&0x02;
+   CLKp=(counter&0x02) == 0x2;
    counter=cnt;
-   CLKn=counter&0x02;
+   CLKn=(counter&0x02) == 0x2;
 
    if( CLKp!=CLKn && CLKn) { // Rising edge
       bool CS, DI;
       mAUDIN_ext=(readdata&(DONE_MASK>>1)) ? 1 : 0 ;
       readdata<<=1;
-      CS=cnt&0x80;
+      CS=(cnt&0x80) == 0x80;
       DI=false;
       if(iodir&0x10) {
-         DI=iodat&0x10;
+	DI = (iodat & 0x10) == 0x10;
       }
       if(!CS) state=EE_NONE;
       switch(state) {

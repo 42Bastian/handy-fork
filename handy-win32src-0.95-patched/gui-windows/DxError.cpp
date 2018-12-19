@@ -21,7 +21,7 @@
 //
 
 
-//#include "stdafx.h"
+#define XXX42
 #include "directx.h"
 
 char* DXAppErrorToString(HRESULT error)

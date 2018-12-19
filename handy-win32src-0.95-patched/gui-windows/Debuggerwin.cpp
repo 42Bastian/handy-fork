@@ -551,7 +551,7 @@ void CDebuggerWin::LineOutput(char *text)
 		sprintf(winline,"%s%c%c",mLineBuffer[loop],0x0d,0x0a);
 		strcat(wintext,winline);
 	}
-	sprintf(winline,"%s",mLineBuffer[loop],0x0d,0x0a);
+	sprintf(winline,"%s%c%c",mLineBuffer[loop],0x0d,0x0a);
 	strcat(wintext,winline);
 
 	mpEditDisplay->SetWindowText(wintext);
@@ -1286,7 +1286,7 @@ bool CDebuggerWin::CommandExecute(int argc, char **argv)
 	}
 	else
 	{
-		spawnvp(_P_WAIT,argv[1],&argv[1]);
+		_spawnvp(_P_WAIT,argv[1],&argv[1]);
 	}
 	return true;
 }

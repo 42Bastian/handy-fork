@@ -342,7 +342,7 @@ void CDumpWin::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 					line.MakeUpper();
 					line+=dump;
-					fprintf(fout,"%s\n",line);
+					fprintf(fout,"%s\n",(LPCTSTR)line);
 					address+=DUMPWIN_WIDTH;
 				}
 				fclose(fout);

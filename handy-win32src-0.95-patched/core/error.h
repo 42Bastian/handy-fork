@@ -63,8 +63,8 @@ public:
    {
       int MsgCount,DescCount;
 
-      MsgCount = err.Message().pcount() + 1;
-      DescCount = err.Description().pcount() + 1;
+      MsgCount = (int)err.Message().pcount() + 1;
+      DescCount = (int)err.Description().pcount() + 1;
       if(MsgCount>MAX_ERROR_MSG) MsgCount=MAX_ERROR_MSG;
       if(DescCount>MAX_ERROR_DESC) DescCount=MAX_ERROR_DESC;
 
